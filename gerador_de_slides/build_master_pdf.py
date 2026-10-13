@@ -487,12 +487,15 @@ HTML_CONTENT = """<!DOCTYPE html>
 """
 
 def generate():
-    html_path = os.path.abspath("novos_slides.html")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(base_dir, ".."))
+
+    html_path = os.path.join(base_dir, "novos_slides.html")
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(HTML_CONTENT)
     print("Saved novos_slides.html")
 
-    pdf_new_path = os.path.abspath("novos_slides.pdf")
+    pdf_new_path = os.path.join(base_dir, "novos_slides.pdf")
     edge_exe = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
     
     cmd = [
@@ -512,8 +515,9 @@ def generate():
         return
 
     # Now merge original slides and new slides into a cohesive master presentation
-    orig_doc = pymupdf.open("google_slides_original.pdf")
-    new_doc = pymupdf.open("novos_slides.pdf")
+    orig_path = os.path.join(base_dir, "google_slides_original.pdf")
+    orig_doc = pymupdf.open(orig_path)
+    new_doc = pymupdf.open(pdf_new_path)
     
     print(f"Original pages: {len(orig_doc)}, New pages: {len(new_doc)}")
     
@@ -584,7 +588,7 @@ def generate():
     # 15. Orig P21 (Image Sources)
     master_doc.insert_pdf(orig_doc, from_page=20, to_page=20)
     
-    out_final = os.path.abspath("Seminario_Etica_Dark_Patterns.pdf")
+    out_final = os.path.join(project_root, "apresentacao", "Seminario_Etica_Dark_Patterns.pdf")
     master_doc.save(out_final)
     print(f"Master presentation generated with {len(master_doc)} slides at {out_final}")
 

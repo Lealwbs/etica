@@ -905,7 +905,9 @@ def create_deck():
                   "- 'Agradecemos a atenção de todos e abrimos agora para os comentários do professor e dos colegas!'\n"
                   "- Usem as 3 perguntas do slide caso a sala fique em silêncio inicial para puxar o debate.")
 
-    output_path = os.path.abspath("Apresentacao_Etica_Dark_Patterns.pptx")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(base_dir, ".."))
+    output_path = os.path.join(project_root, "apresentacao", "Apresentacao_Etica_Dark_Patterns.pptx")
     prs.save(output_path)
     print(f"Presentation saved successfully to {output_path} with {len(prs.slides)} slides.")
 
