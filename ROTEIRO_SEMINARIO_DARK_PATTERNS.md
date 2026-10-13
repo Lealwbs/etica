@@ -2,7 +2,7 @@
 ## Tema: Manipulação Comportamental, Dark Patterns em Escala e a Ilusão do Livre-Arbítrio
 **Artigo Base:** *Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites* (Mathur et al., ACM CSCW, 2019)  
 **Equipe:** 4 Integrantes (~10 minutos por bloco)  
-**Arquivo de Apresentação Gerado:** [Apresentacao_Etica_Dark_Patterns.pptx](file:///d:/Code/etica/Apresentacao_Etica_Dark_Patterns.pptx) (26 Slides formatados, tema escuro moderno, notas de orador e momentos de interação)
+**Apresentação Completa Pronta em PDF:** [Seminario_Etica_Dark_Patterns.pdf](file:///d:/Code/etica/Seminario_Etica_Dark_Patterns.pdf) (32 Slides integrados, design idêntico ao Google Slides, fontes Space Grotesk + Inter, momentos interativos e dinâmicas)
 
 ---
 

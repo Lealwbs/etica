@@ -16,9 +16,9 @@ Repositório com o material de apresentação e pesquisa para o seminário da di
 
 ## 📂 Conteúdo do Repositório
 
-* **[`Apresentacao_Etica_Dark_Patterns.pptx`](./Apresentacao_Etica_Dark_Patterns.pptx):** Apresentação completa em 26 slides (widescreen 16:9, tema escuro moderno, cartões estruturados, notas de orador e momentos interativos com a sala). Pode ser aberta no PowerPoint ou importada diretamente no Google Slides.
+* **[`Seminario_Etica_Dark_Patterns.pdf`](./Seminario_Etica_Dark_Patterns.pdf):** **Apresentação Master em PDF (32 Slides)** pronta para projetar em tela cheia (16:9 widescreen, 960x540pt). Combina todos os slides originais do Google Slides com os novos slides formatados nas exatas fontes (*Space Grotesk* e *Inter*), cores e estrutura de cards.
 * **[`ROTEIRO_SEMINARIO_DARK_PATTERNS.md`](./ROTEIRO_SEMINARIO_DARK_PATTERNS.md):** Guia detalhado minuto a minuto para uma apresentação de 40 minutos em 4 integrantes (~10 min cada), incluindo notas de fala, condução das dinâmicas interativas e respostas blindadas para o debate.
-* **[`build_presentation.py`](./build_presentation.py):** Script Python automatizado utilizando `python-pptx` para gerar/atualizar o arquivo de apresentação.
+* **[`build_master_pdf.py`](./build_master_pdf.py):** Script de compilação automatizada que renderiza os novos slides e unifica a apresentação.
 * **[`Dark_Patterns_at_Scale.pdf`](./Dark_Patterns_at_Scale.pdf):** Artigo científico original publicado na ACM CSCW 2019.
 
 ---
