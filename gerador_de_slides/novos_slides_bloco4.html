@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Novos Slides - Parte do Usuário (Design Dinâmico, Linear & Sintético)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: 960pt 540pt;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: #f3f4f6;
+    font-family: 'Inter', sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .slide {
+    width: 960pt;
+    height: 540pt;
+    page-break-after: always;
+    position: relative;
+    padding: 36pt 48pt 32pt 48pt;
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: #e11d48;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4pt;
+  }
+  .slide-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 29pt;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.15;
+    margin-bottom: 4pt;
+  }
+  .slide-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 15pt;
+    font-weight: 400;
+    color: #4b5563;
+    line-height: 1.35;
+    margin-bottom: 20pt;
+  }
+
+  /* SLIDE 1: BIG STAT PILLARS */
+  .stat-grid {
+    display: flex;
+    gap: 18pt;
+    flex: 1;
+    align-items: stretch;
+  }
+  .stat-column {
+    flex: 1;
+    background: #fafafa;
+    border: 1.5pt solid #f3f4f6;
+    border-radius: 12pt;
+    padding: 24pt 20pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-top: 5pt solid #e5e7eb;
+  }
+  .stat-column.highlight {
+    background: #fff5f5;
+    border-color: #fed7d7;
+    border-top: 5pt solid #e11d48;
+  }
+  .stat-big {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 46pt;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+    margin-bottom: 8pt;
+  }
+  .stat-column.highlight .stat-big {
+    color: #e11d48;
+  }
+  .stat-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16pt;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 8pt;
+  }
+  .stat-desc {
+    font-size: 13.5pt;
+    color: #4b5563;
+    line-height: 1.45;
+  }
+
+  /* SLIDE 2: DEVTOOLS CODE VS CARDS */
+  .code-split {
+    display: flex;
+    gap: 20pt;
+    flex: 1;
+  }
+  .terminal-box {
+    flex: 1.15;
+    background: #0f172a;
+    border-radius: 10pt;
+    padding: 16pt 18pt;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4pt 12pt rgba(0,0,0,0.1);
+  }
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 6pt;
+    margin-bottom: 12pt;
+    padding-bottom: 8pt;
+    border-bottom: 1pt solid #1e293b;
+  }
+  .dot { width: 9pt; height: 9pt; border-radius: 50%; }
+  .dot-red { background: #ef4444; }
+  .dot-yellow { background: #f59e0b; }
+  .dot-green { background: #10b981; }
+  .terminal-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 10.5pt;
+    color: #94a3b8;
+    margin-left: 6pt;
+  }
+  .code-text {
+    font-family: 'Fira Code', monospace;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #e2e8f0;
+    flex: 1;
+  }
+  .code-kw { color: #f43f5e; font-weight: 600; }
+  .code-fn { color: #38bdf8; }
+  .code-str { color: #34d399; }
+  .code-comment { color: #64748b; font-style: italic; }
+  .flag-stack {
+    flex: 0.85;
+    display: flex;
+    flex-direction: column;
+    gap: 12pt;
+  }
+  .flag-card {
+    background: #ffffff;
+    border: 1.5pt solid #e2e8f0;
+    border-left: 4.5pt solid #e11d48;
+    border-radius: 8pt;
+    padding: 14pt 16pt;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .flag-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16pt;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4pt;
+  }
+  .flag-desc {
+    font-size: 13pt;
+    color: #475569;
+    line-height: 1.4;
+  }
+
+  /* SLIDE 3: B2B FLOW VS QUOTE */
+  .b2b-split {
+    display: flex;
+    gap: 20pt;
+    flex: 1;
+  }
+  .b2b-flow-card {
+    flex: 1;
+    background: #ffffff;
+    border: 1.5pt solid #e2e8f0;
+    border-radius: 12pt;
+    padding: 22pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .flow-step {
+    display: flex;
+    align-items: center;
+    gap: 14pt;
+    padding: 10pt 0;
+  }
+  .flow-icon {
+    width: 38pt;
+    height: 38pt;
+    border-radius: 8pt;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18pt;
+    color: #e11d48;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .flow-info-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15.5pt;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .flow-info-desc {
+    font-size: 12.5pt;
+    color: #64748b;
+  }
+  .b2b-quote-card {
+    flex: 1;
+    background: #fef2f2;
+    border: 1.5pt solid #fecaca;
+    border-radius: 12pt;
+    padding: 24pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .quote-pill {
+    align-self: flex-start;
+    background: #fee2e2;
+    color: #e11d48;
+    font-size: 10.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3pt 9pt;
+    border-radius: 4pt;
+    margin-bottom: 12pt;
+  }
+  .quote-loud {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26pt;
+    font-weight: 700;
+    color: #991b1b;
+    line-height: 1.2;
+    margin-bottom: 12pt;
+  }
+  .quote-context {
+    font-size: 13.5pt;
+    color: #4b5563;
+    line-height: 1.45;
+  }
+
+  /* SLIDE 4: VERSUS SPLIT */
+  .versus-container {
+    display: flex;
+    gap: 18pt;
+    flex: 1;
+  }
+  .versus-card {
+    flex: 1;
+    border-radius: 12pt;
+    padding: 24pt;
+    display: flex;
+    flex-direction: column;
+  }
+  .versus-bad {
+    background: #f8fafc;
+    border: 1.5pt solid #cbd5e1;
+  }
+  .versus-good {
+    background: #111827;
+    border: 1.5pt solid #1f2937;
+    color: #ffffff;
+  }
+  .versus-tag {
+    font-size: 11pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10pt;
+  }
+  .versus-bad .versus-tag { color: #64748b; }
+  .versus-good .versus-tag { color: #f87171; }
+  .versus-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20pt;
+    font-weight: 700;
+    margin-bottom: 14pt;
+  }
+  .versus-bad .versus-title { color: #334155; }
+  .versus-good .versus-title { color: #ffffff; }
+  .point-row {
+    display: flex;
+    gap: 10pt;
+    margin-bottom: 10pt;
+    font-size: 13.5pt;
+    line-height: 1.4;
+  }
+  .versus-bad .point-row { color: #475569; }
+  .versus-good .point-row { color: #cbd5e1; }
+  .bullet-cross { color: #ef4444; font-weight: 700; }
+  .bullet-check { color: #34d399; font-weight: 700; }
+
+  /* SLIDE 5: LEGAL PENALTY TICKER & PILLS */
+  .legal-top {
+    display: flex;
+    gap: 12pt;
+    margin-bottom: 16pt;
+  }
+  .law-pill {
+    flex: 1;
+    background: #f1f5f9;
+    border-left: 4pt solid #3b82f6;
+    padding: 10pt 14pt;
+    border-radius: 0 8pt 8pt 0;
+  }
+  .law-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2pt;
+  }
+  .law-rule {
+    font-size: 11.5pt;
+    color: #475569;
+  }
+  .fines-row {
+    display: flex;
+    gap: 16pt;
+    flex: 1;
+  }
+  .fine-card {
+    flex: 1;
+    background: #ffffff;
+    border: 1.5pt solid #fecaca;
+    border-radius: 12pt;
+    padding: 18pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2pt 6pt rgba(225, 29, 72, 0.04);
+  }
+  .fine-amount {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32pt;
+    font-weight: 700;
+    color: #e11d48;
+    line-height: 1.1;
+    margin-bottom: 4pt;
+  }
+  .fine-target {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15pt;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6pt;
+  }
+  .fine-cause {
+    font-size: 12.5pt;
+    color: #64748b;
+    line-height: 1.35;
+  }
+
+  /* SLIDE 6: UNIFIED MASTER DEBATE (4 CLEAN TILES) */
+  .unified-debate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14pt;
+    flex: 1;
+  }
+  .u-card {
+    background: #ffffff;
+    border: 1.5pt solid #e2e8f0;
+    border-radius: 10pt;
+    padding: 16pt 18pt;
+    display: flex;
+    gap: 12pt;
+    align-items: flex-start;
+  }
+  .u-card.highlight {
+    background: #fff8f8;
+    border-color: #fca5a5;
+  }
+  .u-num {
+    width: 26pt;
+    height: 26pt;
+    border-radius: 50%;
+    background: #fee2e2;
+    color: #e11d48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13pt;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .u-card.highlight .u-num {
+    background: #e11d48;
+    color: #ffffff;
+  }
+  .u-content {
+    flex: 1;
+  }
+  .u-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15pt;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4pt;
+  }
+  .u-text {
+    font-size: 12.5pt;
+    color: #4b5563;
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+
+  <!-- SLIDE 1: QUAL A RELEVÂNCIA DE ESTUDOS NESSE CAMPO? -->
+  <div class="slide">
+    <div class="kicker">ESTUDO BASE • PRINCETON & UCHICAGO</div>
+    <div class="slide-title">Qual a Relevância de Estudos Nesse Campo?</div>
+    <div class="slide-subtitle">A pesquisa de Mathur et al. transformou a percepção de mercado através de dados maciços</div>
+    <div class="stat-grid">
+      <div class="stat-column">
+        <div class="stat-big">11.000+</div>
+        <div class="stat-label">Lojas Rastreadas</div>
+        <div class="stat-desc">
+          Auditoria automatizada em <strong>53 mil checkouts</strong> com Selenium e OpenWPM. Prova de que a coerção é estrutural na web.
+        </div>
+      </div>
+      <div class="stat-column highlight">
+        <div class="stat-big">3x Mais</div>
+        <div class="stat-label">Grandes Marcas</div>
+        <div class="stat-desc">
+          Sites líderes de tráfego enganam até <strong>3 vezes mais</strong> que lojas pequenas. A fraude virou padrão corporativo de CRO.
+        </div>
+      </div>
+      <div class="stat-column">
+        <div class="stat-big">Base Legal</div>
+        <div class="stat-label">Tribunais & Leis</div>
+        <div class="stat-desc">
+          Forneceu evidências empíricas diretas para investigações da <strong>FTC (EUA)</strong> e o <strong>Digital Services Act (União Europeia)</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: A ENGENHARIA REVERSA DA FRAUDE -->
+  <div class="slide">
+    <div class="kicker">INSPEÇÃO DE CÓDIGO</div>
+    <div class="slide-title">A Engenharia Reversa da Fraude</div>
+    <div class="slide-subtitle">Como os pesquisadores flagraram a mentira inspecionando o JavaScript das páginas</div>
+    <div class="code-split">
+      <div class="terminal-box">
+        <div class="terminal-header">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+          <span class="terminal-title">fake-social-proof.js</span>
+        </div>
+        <div class="code-text">
+          <span class="code-comment">// 1. Compradores inventados no cliente:</span><br>
+          <span class="code-kw">const</span> nomes = [<span class="code-str">"Lucas"</span>, <span class="code-str">"Camila"</span>, <span class="code-str">"Bruno"</span>];<br>
+          <span class="code-kw">const</span> cidades = [<span class="code-str">"SP"</span>, <span class="code-str">"RJ"</span>, <span class="code-str">"Curitiba"</span>];<br><br>
+          <span class="code-comment">// 2. Sorteio randômico com Math.random:</span><br>
+          <span class="code-kw">let</span> i = <span class="code-fn">Math.floor</span>(<span class="code-fn">Math.random</span>() * nomes.length);<br>
+          <span class="code-fn">showToast</span>(nomes[i] + <span class="code-str">" acabou de comprar!"</span>);<br><br>
+          <span class="code-comment">// 3. Nenhum banco de dados ou venda real!</span>
+        </div>
+      </div>
+      <div class="flag-stack">
+        <div class="flag-card">
+          <div class="flag-title">140 Relógios Reciclados</div>
+          <div class="flag-desc">
+            O crawler gravou vídeos a cada 4 horas: o contador zerava e reiniciava no reload sem a oferta expirar.
+          </div>
+        </div>
+        <div class="flag-card">
+          <div class="flag-title">Estoque por Relógio</div>
+          <div class="flag-desc">
+            16 sites decrementavam o estoque por temporizador fixo, forjando escassez sem checar o depósito real.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: DARK PATTERNS AS A SERVICE (DPaaS) -->
+  <div class="slide">
+    <div class="kicker">MERCADO B2B DE SOFTWARE</div>
+    <div class="slide-title">Dark Patterns as a Service (DPaaS)</div>
+    <div class="slide-subtitle">A terceirização da manipulação em plugins prontos para Shopify e WooCommerce</div>
+    <div class="b2b-split">
+      <div class="b2b-flow-card">
+        <div class="flow-step">
+          <div class="flow-icon">🏢</div>
+          <div>
+            <div class="flow-info-title">22 Empresas Mapeadas</div>
+            <div class="flow-info-desc">Fornecedores de software que vendem armadilhas prontas.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">⚡</div>
+          <div>
+            <div class="flow-info-title">US$ 20 por Mês</div>
+            <div class="flow-info-desc">Qualquer lojista instala coerção psicológica com 1 clique.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">🚫</div>
+          <div>
+            <div class="flow-info-title">Banimento do Beeketing</div>
+            <div class="flow-info-desc">Plugin em 400+ lojas expulso da App Store após o estudo.</div>
+          </div>
+        </div>
+      </div>
+      <div class="b2b-quote-card">
+        <div class="quote-pill">Slogan Comercial Oficial</div>
+        <div class="quote-loud">"Fake it till you make it"</div>
+        <div class="quote-context">
+          Slogan do plugin comercial <strong>Boost</strong>, anunciando abertamente a criação de pedidos e compradores fictícios para acelerar conversões a qualquer custo.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: A RESPONSABILIDADE DO DEV FRONTEND -->
+  <div class="slide">
+    <div class="kicker">DEONTOLOGIA & ÉTICA PROFISSIONAL</div>
+    <div class="slide-title">A Responsabilidade do Desenvolvedor Frontend</div>
+    <div class="slide-subtitle">A cultura de conversão cega e a defesa moral: "Apenas cumpri ordens do Jira"</div>
+    <div class="versus-container">
+      <div class="versus-card versus-bad">
+        <div class="versus-tag">A Tirania do CRO & OKRs</div>
+        <div class="versus-title">A Pressão Corporativa</div>
+        <div class="point-row">
+          <span class="bullet-cross">✕</span>
+          <span><strong>Métricas cegas:</strong> Foco exclusivo em taxa de conversão e cliques imediatos.</span>
+        </div>
+        <div class="point-row">
+          <span class="bullet-cross">✕</span>
+          <span><strong>Testes A/B manipulativos:</strong> Variantes desenhadas para esconder opções de recusa.</span>
+        </div>
+        <div class="point-row">
+          <span class="bullet-cross">✕</span>
+          <span>Nenhuma métrica mede arrependimento pós-compra ou quebra de confiança.</span>
+        </div>
+      </div>
+      <div class="versus-card versus-good">
+        <div class="versus-tag">Código de Ética da ACM</div>
+        <div class="versus-title">A Nossa Responsabilidade</div>
+        <div class="point-row">
+          <span class="bullet-check">✓</span>
+          <span><strong>Artigo 1.2:</strong> "Evitar causar dano" (Avoid harm ao usuário).</span>
+        </div>
+        <div class="point-row">
+          <span class="bullet-check">✓</span>
+          <span><strong>Artigo 1.4:</strong> "Ser justo e transparente, não enganar".</span>
+        </div>
+        <div class="point-row">
+          <span class="bullet-check">✓</span>
+          <span>Desenvolvedores não são digitadores passivos; somos arquitetos das escolhas sociais.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: MARCO LEGAL: DA TEORIA À MULTA -->
+  <div class="slide">
+    <div class="kicker">MARCO LEGAL & APLICAÇÃO</div>
+    <div class="slide-title">O Cenário Jurídico: Da Teoria à Multa</div>
+    <div class="slide-subtitle">Como as autoridades mundiais estão punindo os padrões enganosos com multas pesadas</div>
+    <div class="legal-top">
+      <div class="law-pill">
+        <div class="law-name">CDC Art. 37 & 39 (Brasil)</div>
+        <div class="law-rule">Veda publicidade enganosa, venda casada e custos ocultos no checkout.</div>
+      </div>
+      <div class="law-pill" style="border-left-color: #10b981;">
+        <div class="law-name">LGPD Art. 8º (Brasil)</div>
+        <div class="law-rule">Consentimento viciado é nulo. Botões assimétricos invalidam o aceite.</div>
+      </div>
+      <div class="law-pill" style="border-left-color: #f59e0b;">
+        <div class="law-name">Digital Services Act (União Europeia)</div>
+        <div class="law-rule">Artigo 25 proíbe expressamente Dark Patterns em plataformas digitais.</div>
+      </div>
+    </div>
+    <div class="fines-row">
+      <div class="fine-card">
+        <div class="fine-amount">$2,5 Bi</div>
+        <div class="fine-target">Amazon (EUA)</div>
+        <div class="fine-cause">Ação da FTC pelo "Iliad Flow" (labirinto para cancelar o Prime).</div>
+      </div>
+      <div class="fine-card">
+        <div class="fine-amount">$520 Mi</div>
+        <div class="fine-target">Epic Games / Fortnite</div>
+        <div class="fine-cause">Punição histórica por compras acidentais de menores sem consentimento.</div>
+      </div>
+      <div class="fine-card">
+        <div class="fine-amount">Até 6%</div>
+        <div class="fine-target">União Europeia (DSA)</div>
+        <div class="fine-cause">Multa máxima calculada sobre o faturamento global da empresa.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: DEBATE ABERTO & QUESTIONAMENTOS FINAIS (UNIFICADO & CONDENSADO EM 4 PILARES) -->
+  <div class="slide">
+    <div class="kicker">CONCLUSÃO & DEBATE COM A SALA</div>
+    <div class="slide-title">Debate Aberto & Questionamentos Finais</div>
+    <div class="slide-subtitle">Provocações centrais sobre ética, mercado e viabilidade para debater com o professor e a turma</div>
+    <div class="unified-debate-grid">
+      <div class="u-card">
+        <div class="u-num">1</div>
+        <div class="u-content">
+          <div class="u-title">Culpa da Vítima ou do Sistema?</div>
+          <div class="u-text">O usuário tem o dever moral de ser "mais atento" ou o sistema tem a obrigação ética de não ser desenhado para coagir?</div>
+        </div>
+      </div>
+      <div class="u-card highlight">
+        <div class="u-num">2</div>
+        <div class="u-content">
+          <div class="u-title">IA & Coerção Autônoma</div>
+          <div class="u-text">Uma Inteligência Artificial treinada apenas para maximizar receita inventará novos Dark Patterns sozinha se não tiver restrições?</div>
+        </div>
+      </div>
+      <div class="u-card">
+        <div class="u-num">3</div>
+        <div class="u-content">
+          <div class="u-title">Livre Mercado vs. Punição</div>
+          <div class="u-text">É justo punir empresas por tentar vender mais? Essas leis e medidas regulatórias são realmente viáveis e eficazes na prática?</div>
+        </div>
+      </div>
+      <div class="u-card highlight">
+        <div class="u-num">4</div>
+        <div class="u-content">
+          <div class="u-title">A Nossa Linha Vermelha</div>
+          <div class="u-text">Qual é o limite prático que você, como futuro cientista da computação ou desenvolvedor, jamais aceitaria cruzar em uma interface?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
