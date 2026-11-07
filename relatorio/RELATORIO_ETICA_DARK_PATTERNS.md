@@ -3,8 +3,20 @@
 **Universidade Federal • Departamento de Ciência da Computação**  
 **Disciplina:** Ética na Computação • Seminário Temático  
 **Artigo Base:** *Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites* (Mathur et al., ACM CSCW 2019)  
-**Equipe:** Ítalo Leal e Grupo de Seminário • Outubro de 2026  
+**Grupo / Integrantes:**  
+* Henrique Gomes dos Santos Medeiros — Matrícula: 2021084986  
+* Isadora Cunha Pimentel — Matrícula: 2021039506  
+* Italo Leal Lana Santos — Matrícula: 2024013893  
+* Vitor Hugo Dias Santos — Matrícula: 2024014202  
 **PDF Gerado:** [`Relatorio_Etica_Dark_Patterns.pdf`](./Relatorio_Etica_Dark_Patterns.pdf)
+
+---
+
+## Resumo
+
+Este relatório analisa o fenômeno dos padrões enganosos de interface (*dark patterns*) no comércio eletrônico sob as perspectivas técnica, empírica e da ética profissional na computação. Com base no estudo científico de Mathur et al. (ACM CSCW 2019), conduzido sobre 11.227 lojas virtuais, examinam-se a taxonomia dessas práticas coercitivas, a terceirização por meio de *Dark Patterns as a Service* (DPaaS) e a manipulação cognitiva exercida sobre os usuários. Discutem-se ainda as implicações éticas à luz da autonomia moral, os enquadramentos legais no ordenamento jurídico brasileiro (CDC e LGPD) e as sanções da FTC, ressaltando o dever e a responsabilidade do desenvolvedor de software na concepção de interfaces transparentes.
+
+**Palavras-chave:** Dark patterns. Ética na computação. Autonomia do usuário. Interfaces coercitivas. Engenharia de software.
 
 ---
 

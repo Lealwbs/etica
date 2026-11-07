@@ -1,7 +1,11 @@
 # GUIA MESTRE & ROTEIRO: SEMINÁRIO DE ÉTICA NA COMPUTAÇÃO (40 MINUTOS)
 ## Tema: Manipulação Comportamental, Dark Patterns em Escala e a Ilusão do Livre-Arbítrio
 **Artigo Base:** *Dark Patterns at Scale: Findings from a Crawl of 11K Shopping Websites* (Mathur et al., ACM CSCW, 2019)  
-**Equipe:** 4 Integrantes (~10 minutos por bloco)  
+**Integrantes do Grupo:**
+* Henrique Gomes dos Santos Medeiros — Matrícula: 2021084986
+* Isadora Cunha Pimentel — Matrícula: 2021039506
+* Italo Leal Lana Santos — Matrícula: 2024013893
+* Vitor Hugo Dias Santos — Matrícula: 2024014202  
 **Apresentação Completa Pronta em PDF:** [Seminario_Etica_Dark_Patterns.pdf](file:///d:/Code/etica/Seminario_Etica_Dark_Patterns.pdf) (32 Slides integrados, design idêntico ao Google Slides, fontes Space Grotesk + Inter, momentos interativos e dinâmicas)
 
 ---

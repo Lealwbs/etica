@@ -154,10 +154,11 @@ def create_deck():
     p3.font.color.rgb = C_TEXT_MUTED
     p3.space_before = Pt(16)
     
-    add_card(s1, Inches(0.8), Inches(5.6), Inches(11.733), Inches(1.1),
+    add_card(s1, Inches(0.8), Inches(5.3), Inches(11.733), Inches(1.5),
              title=None,
              items=[
-                 "Seminário de Ética na Computação • Duração: 40 minutos • Apresentação em 4 Blocos Interativos"
+                 "Seminário de Ética na Computação • Apresentação em 4 Blocos Interativos",
+                 "Equipe: Henrique Gomes (2021084986) • Isadora Cunha (2021039506) • Ítalo Leal (2024013893) • Vitor Hugo (2024014202)"
              ],
              border_color=C_CYAN, title_color=C_CYAN)
     

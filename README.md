@@ -2,6 +2,12 @@
 
 Repositório oficial com todo o material de apresentação, pesquisa e roteiro para o seminário da disciplina de **Ética na Computação**.
 
+**Integrantes do Grupo:**
+* **Henrique Gomes dos Santos Medeiros** — Matrícula: 2021084986
+* **Isadora Cunha Pimentel** — Matrícula: 2021039506
+* **Italo Leal Lana Santos** — Matrícula: 2024013893
+* **Vitor Hugo Dias Santos** — Matrícula: 2024014202
+
 ---
 
 ## 🗂️ Estrutura de Pastas e Arquivos
@@ -46,7 +52,7 @@ etica/
 * **[`Apresentacao_Etica_Dark_Patterns.pptx`](./apresentacao/Apresentacao_Etica_Dark_Patterns.pptx)**: Slides em formato editável do Microsoft PowerPoint, com cartões modernos e as anotações de orador (*speaker notes*) embutidas em cada slide.
 
 ### 2. 📄 [`relatorio/`](./relatorio/) — Para Submeter (Texto de 6 Páginas)
-* **[`Relatorio_Etica_Dark_Patterns.pdf`](./relatorio/Relatorio_Etica_Dark_Patterns.pdf)**: **Relatório formal completo de exatamente 6 páginas** em conformidade com o edital do seminário. Possui cabeçalho institucional, resumo executivo, dissecção técnica do estudo de Mathur et al., fundamentos de psicologia cognitiva (Kahneman e Tversky), análise ética deontológica (Kant), casos reais (FTC v. Amazon), enquadramento jurídico (CDC, LGPD e DSA), soluções de engenharia de software defensiva, declaração de uso de IA e 10 referências bibliográficas.
+* **[`Relatorio_Etica_Dark_Patterns.pdf`](./relatorio/Relatorio_Etica_Dark_Patterns.pdf)**: **Relatório formal completo de exatamente 6 páginas** em conformidade com o edital do seminário. Possui cabeçalho institucional com integrantes e matrículas, resumo acadêmico, dissecção técnica do estudo de Mathur et al., fundamentos de psicologia cognitiva (Kahneman e Tversky), análise ética deontológica (Kant), casos reais (FTC v. Amazon), enquadramento jurídico (CDC, LGPD e DSA), soluções de engenharia de software defensiva, declaração de uso de IA e 10 referências bibliográficas.
 * **[`RELATORIO_ETICA_DARK_PATTERNS.md`](./relatorio/RELATORIO_ETICA_DARK_PATTERNS.md)**: Versão integral em Markdown do relatório para leitura rápida no navegador.
 * **[`gerar_relatorio_pdf.py`](./relatorio/gerar_relatorio_pdf.py)**: Script em Python que compila o HTML para PDF via Edge headless e insere cabeçalhos e paginação ("Página X de 6") via PyMuPDF.
 

@@ -558,6 +558,13 @@ def generate():
     master_doc = pymupdf.open()
     
     # 1. Cover
+    orig_doc[0].insert_text(
+        pymupdf.Point(60, 460),
+        'Equipe: Henrique Gomes (2021084986) • Isadora Cunha (2021039506) • Ítalo Leal (2024013893) • Vitor Hugo (2024014202)',
+        fontsize=13,
+        fontname='helv',
+        color=(0.60, 0.68, 0.78)
+    )
     master_doc.insert_pdf(orig_doc, from_page=0, to_page=0)
     # 2. Interativo 01
     master_doc.insert_pdf(new_doc, from_page=0, to_page=0)

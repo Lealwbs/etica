@@ -6,7 +6,7 @@
 <style>
   @page {
     size: A4 portrait;
-    margin: 28mm 22mm 22mm 28mm;
+    margin: 25mm 22mm 24mm 22mm;
   }
 
   * {
@@ -18,7 +18,7 @@
   body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 12pt;
-    line-height: 1.46;
+    line-height: 1.42;
     color: #000;
     background-color: #fff;
     text-align: justify;
@@ -27,7 +27,7 @@
   /* Cabeçalho Acadêmico Simples */
   .header-universitario {
     text-align: center;
-    margin-bottom: 18pt;
+    margin-bottom: 16pt;
     line-height: 1.3;
   }
 
@@ -45,14 +45,22 @@
   .header-universitario .titulo {
     font-size: 13pt;
     font-weight: bold;
-    margin-top: 10pt;
+    margin-top: 9pt;
     text-transform: uppercase;
   }
 
   .header-universitario .meta {
     font-size: 10pt;
-    margin-top: 6pt;
+    margin-top: 5pt;
     font-style: italic;
+    color: #333;
+  }
+
+  .header-universitario .autores {
+    font-size: 10.5pt;
+    margin-top: 8pt;
+    line-height: 1.35;
+    color: #000;
   }
 
   /* Títulos de Seção */
@@ -157,10 +165,25 @@
     <div class="sub">Disciplina: Ética na Computação • Seminário Temático</div>
     <div class="titulo">Manipulação Comportamental e Padrões Enganosos em Escala<br>(Dark Patterns at Scale)</div>
     <div class="meta">
-      Análise baseada no estudo de Mathur et al. (ACM CSCW 2019) e material apresentado em seminário<br>
-      Equipe: Ítalo Leal e Grupo de Seminário • Outubro de 2026
+      Análise baseada no estudo de Mathur et al. (ACM CSCW 2019) e discussões do seminário
+    </div>
+    <div class="autores">
+      Henrique Gomes dos Santos Medeiros — 2021084986<br>
+      Isadora Cunha Pimentel — 2021039506<br>
+      Italo Leal Lana Santos — 2024013893<br>
+      Vitor Hugo Dias Santos — 2024014202
     </div>
   </div>
+
+  <h2>Resumo</h2>
+
+  <p class="sem-recuo">
+    Este relatório analisa o fenômeno dos padrões enganosos de interface (<em>dark patterns</em>) no comércio eletrônico sob as perspectivas técnica, empírica e da ética profissional na computação. Com base no estudo científico de Mathur et al. (ACM CSCW 2019), conduzido sobre 11.227 lojas virtuais, examinam-se a taxonomia dessas práticas coercitivas, a terceirização por meio de <em>Dark Patterns as a Service</em> (DPaaS) e a manipulação cognitiva exercida sobre os usuários. Discutem-se ainda as implicações éticas à luz da autonomia moral, os enquadramentos legais no ordenamento jurídico brasileiro (CDC e LGPD) e as sanções da FTC, ressaltando o dever e a responsabilidade do desenvolvedor de software na concepção de interfaces transparentes.
+  </p>
+
+  <p class="sem-recuo" style="font-size: 11pt; margin-bottom: 10pt;">
+    <strong>Palavras-chave:</strong> Dark patterns. Ética na computação. Autonomia do usuário. Interfaces coercitivas. Engenharia de software.
+  </p>
 
   <h2>1. Introdução e Definição de Dark Patterns</h2>
 
