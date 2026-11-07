@@ -17,7 +17,7 @@ Aqui está o mapa completo de onde encontrar cada arquivo no projeto:
 ```
 etica/
 ├── 📁 apresentacao/             # 🎯 O QUE VOCÊ USA NO DIA DA APRESENTAÇÃO
-│   ├── Seminario_Etica_Dark_Patterns.pdf    # Apresentação final em PDF (32 slides prontos para projetar)
+│   ├── Seminario_Etica_Dark_Patterns.pdf    # Apresentação final em PDF (30 slides prontos para projetar (versão atualizada com Bloco 4))
 │   └── Apresentacao_Etica_Dark_Patterns.pptx # Apresentação completa em PowerPoint (.pptx editável)
 │
 ├── 📁 relatorio/                # 📄 RELATÓRIO ACADÊMICO DE 6 PÁGINAS (SUBMISSÃO OBRIGATÓRIA)
@@ -48,7 +48,7 @@ etica/
 ## 📖 Qual arquivo é qual?
 
 ### 1. 🎯 [`apresentacao/`](./apresentacao/) — Para Apresentar
-* **[`Seminario_Etica_Dark_Patterns.pdf`](./apresentacao/Seminario_Etica_Dark_Patterns.pdf)**: **A versão final master recomendada para projetar na aula.** Contém 32 slides em alta resolução (formato 16:9 widescreen), unindo o design original do Google Slides com os novos slides de dinâmica com a turma, engenharia reversa de código JS, filosofia moral e regulação jurídica.
+* **[`Seminario_Etica_Dark_Patterns.pdf`](./apresentacao/Seminario_Etica_Dark_Patterns.pdf)**: **A versão final master recomendada para projetar na aula.** Contém 30 slides em alta resolução (formato 16:9 widescreen), unindo o design original do Google Slides com os novos slides de dinâmica com a turma, engenharia reversa de código JS, filosofia moral e regulação jurídica.
 * **[`Apresentacao_Etica_Dark_Patterns.pptx`](./apresentacao/Apresentacao_Etica_Dark_Patterns.pptx)**: Slides em formato editável do Microsoft PowerPoint, com cartões modernos e as anotações de orador (*speaker notes*) embutidas em cada slide.
 
 ### 2. 📄 [`relatorio/`](./relatorio/) — Para Submeter (Texto de 6 Páginas)
